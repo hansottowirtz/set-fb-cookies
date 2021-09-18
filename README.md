@@ -22,4 +22,4 @@ const setFbCookies = require("set-fb-cookies").default;
 setFbCookies();
 ```
 
-Better yet, if you want to use only the Conversion API you can use this script to generate `_fbc` and `_fbp` which you can then pass to your Server. This makes it possible to skip the using the browser Pixel.
+Better yet, if you want to use only the Conversion API you can use this script to generate `_fbc` and `_fbp` which you can then pass to your Server. This makes it possible to skip using the browser Pixel.

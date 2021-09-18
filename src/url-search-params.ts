@@ -1,3 +1,4 @@
+// From https://gist.github.com/Robert-96/9b228156dda87c1b314bfe4790a7b45a
 export const getUspByName = (name: string) => {
   const url = window.location.search;
   name = name.replace(/[\[\]]/g, "\\$&");

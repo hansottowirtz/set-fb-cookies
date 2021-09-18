@@ -1,6 +1,6 @@
 {
   "name": "set-fb-cookies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Set _fbc and _fbp when Facebook Pixel doesn't",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -8,6 +8,7 @@
   "author": "Hans Otto Wirtz <hansottowirtz@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "tsc && tsc -p tsconfig.esm.json && rollup -c"
   },
   "devDependencies": {

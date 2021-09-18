@@ -11,8 +11,10 @@ const set = () => {
   const currTime = new Date().getTime();
 
   const fbclid = getUspByName('fbclid');
-  const fbcIsUpToDate = fbclid && simpleCookie.hasItem('_fbc') && simpleCookie.getItem('_fbc').includes(fbclid);
-  if (fbclid && !fbcIsUpToDate) packAndSetCookie('_fbc', fbclid, currTime);
+  if (fbclid) {
+    const fbcIsUpToDate = simpleCookie.hasItem('_fbc') && simpleCookie.getItem('_fbc').includes(fbclid);
+    if (!fbcIsUpToDate) packAndSetCookie('_fbc', fbclid, currTime);
+  }
 
   if (!simpleCookie.hasItem('_fbp')) {
     const browserId = `${Math.round(2147483647 * Math.random())}`; // code taken from <pixel_id>.js
