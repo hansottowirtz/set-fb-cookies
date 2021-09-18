@@ -1,0 +1,265 @@
+diff --git a/pixel_US.js b/pixel_BE.js
+index abcdef..ghijkl 100644
+--- a/pixel_US.js
++++ b/pixel_BE.js
+@@ -13379,251 +13379,6 @@
+     });
+   })();
+ })();
+-(function() {
+-  var a = window;
+-  var b = document;
+-  var c = location;
+-  var d = history;
+-  var e = { exports: {} };
+-  e.exports;
+-  (function() {
+-    function g(a, b) {
+-      if (!(a instanceof b)) {
+-        throw new TypeError('Cannot call a class as a function');
+-      }
+-    }
+-    function h(a, b) {
+-      if (!a) {
+-        throw new ReferenceError(
+-          "this hasn't been initialised - super() hasn't been called"
+-        );
+-      }
+-      if (b && (typeof b === 'object' || typeof b === 'function')) {
+-        return b;
+-      } else {
+-        return a;
+-      }
+-    }
+-    function i(a, b) {
+-      if (typeof b !== 'function' && b !== null) {
+-        throw new TypeError(
+-          'Super expression must either be null or a function, not ' + typeof b
+-        );
+-      }
+-      a.prototype = Object.create(b && b.prototype, {
+-        constructor: {
+-          value: a,
+-          enumerable: false,
+-          writable: true,
+-          configurable: true,
+-        },
+-      });
+-      if (b) {
+-        if (Object.setPrototypeOf) {
+-          Object.setPrototypeOf(a, b);
+-        } else {
+-          a.__proto__ = b;
+-        }
+-      }
+-    }
+-    var f = a.fbq;
+-    f.execStart = a.performance && a.performance.now && a.performance.now();
+-    if (
+-      !(function() {
+-        var b = a.postMessage || function() {};
+-        if (!f) {
+-          b(
+-            {
+-              action: 'FB_LOG',
+-              logType: 'Facebook Pixel Error',
+-              logMessage: 'Pixel code is not installed correctly on this page',
+-            },
+-            '*'
+-          );
+-          if ('error' in console) {
+-            console.error(
+-              'Facebook Pixel Error: Pixel code is not installed correctly on this page'
+-            );
+-          }
+-          return false;
+-        }
+-        return true;
+-      })()
+-    ) {
+-      return;
+-    }
+-    if (!f.__fbeventsModules) {
+-      f.__fbeventsModules = {};
+-      f.__fbeventsResolvedModules = {};
+-      f.getFbeventsModules = function(a) {
+-        if (!f.__fbeventsResolvedModules[a]) {
+-          f.__fbeventsResolvedModules[a] = f.__fbeventsModules[a]();
+-        }
+-        return f.__fbeventsResolvedModules[a];
+-      };
+-      f.fbIsModuleLoaded = function(a) {
+-        return !!f.__fbeventsModules[a];
+-      };
+-      f.ensureModuleRegistered = function(b, a) {
+-        if (!f.fbIsModuleLoaded(b)) {
+-          f.__fbeventsModules[b] = a;
+-        }
+-      };
+-    }
+-    f.ensureModuleRegistered('signalsFBEventsIsHostFacebook', function() {
+-      var f = a;
+-      var g = b;
+-      var h = c;
+-      var i = d;
+-      var e = { exports: {} };
+-      e.exports;
+-      (function() {
+-        'use strict';
+-        e.exports = function(a) {
+-          if (typeof a !== 'string') {
+-            return false;
+-          }
+-          a = a.match(/^(.*\.)*facebook\.com$/i);
+-          return a !== null;
+-        };
+-      })();
+-      return e.exports;
+-    });
+-    f.ensureModuleRegistered('SignalsFBEvents.plugins.cookie', function() {
+-      return (function(a, b, c, d) {
+-        var e = { exports: {} };
+-        e.exports;
+-        (function() {
+-          'use strict';
+-          function w() {
+-            return '' + Math.round(v * Math.random());
+-          }
+-          function x() {
+-            var c =
+-              arguments.length > 0 && arguments[0] !== void 0
+-                ? arguments[0]
+-                : a.location.href;
+-            var d = k(c, o);
+-            if (d === null) {
+-              d = k(b.referrer, o);
+-            }
+-            if (d != null && d.length > 500) {
+-              return null;
+-            }
+-            var e = l(p);
+-            if (d == null) {
+-              if (e) {
+-                return n(p, e);
+-              }
+-            } else {
+-              if (!e) {
+-                return m(p, d);
+-              }
+-              e.maybeUpdatePayload(d);
+-              return n(p, e);
+-            }
+-            return null;
+-          }
+-          function y() {
+-            var a = l(r);
+-            if (a) {
+-              n(r, a);
+-              return a;
+-            }
+-            a = w();
+-            return m(r, a);
+-          }
+-          var c = f.getFbeventsModules('SignalsFBEventsEvents');
+-          var d = c.getCustomParameters;
+-          f.getFbeventsModules('SignalsFBEventsPixelCookie');
+-          c = f.getFbeventsModules('SignalsFBEventsPlugin');
+-          var j = f.getFbeventsModules('SignalsFBEventsURLUtil');
+-          var k = j.getURLParameter;
+-          j = f.getFbeventsModules('SignalsPixelCookieUtils');
+-          var l = j.readPackedCookie;
+-          var m = j.writeNewCookie;
+-          var n = j.writeExistingCookie;
+-          var o = j.CLICK_ID_PARAMETER;
+-          var p = j.CLICKTHROUGH_COOKIE_NAME;
+-          var q = j.CLICKTHROUGH_COOKIE_PARAM;
+-          var r = j.DOMAIN_SCOPED_BROWSER_ID_COOKIE_NAME;
+-          var s = j.DOMAIN_SCOPED_BROWSER_ID_COOKIE_PARAM;
+-          var t = f.getFbeventsModules('signalsFBEventsIsHostFacebook');
+-          var u = 'FirstPartyCookies';
+-          var v = 2147483647;
+-          j = (function() {
+-            function b() {
+-              var a;
+-              g(this, b);
+-              var f = arguments.length;
+-              var i = Array(f);
+-              for (var j = 0; j < f; j++) {
+-                i[j] = arguments[j];
+-              }
+-              var c = h(
+-                this,
+-                (a = b.__proto__ || Object.getPrototypeOf(b)).call.apply(
+-                  a,
+-                  [this].concat(i)
+-                )
+-              );
+-              var e = c;
+-              c.dropOrRefreshClickIDCookie = x;
+-              c.dropOrRefreshDomainScopedBrowserIDCookie = y;
+-              var d = e;
+-              return h(c, d);
+-            }
+-            var a = c;
+-            i(b, a);
+-            return b;
+-          })();
+-          e.exports = new j(function(b, c) {
+-            function e() {
+-              d.listen(function(d) {
+-                if (
+-                  a.location.protocol.substring(0, 'http'.length) !== 'http'
+-                ) {
+-                  return {};
+-                }
+-                if (
+-                  (b._forceFPCookies === null || b._forceFPCookies === false) &&
+-                  t(a.location.hostname)
+-                ) {
+-                  return {};
+-                }
+-                if (c.disableFirstPartyCookies) {
+-                  return {};
+-                }
+-                if (c.getOptedInPixels(u).indexOf(d) === -1) {
+-                  return {};
+-                }
+-                d = {};
+-                var e = x();
+-                if (e) {
+-                  d[q] = e.pack();
+-                }
+-                e = y();
+-                if (e) {
+-                  d[s] = e.pack();
+-                }
+-                return d;
+-              });
+-            }
+-            e();
+-          });
+-        })();
+-        return e.exports;
+-      })(a, b, c, d);
+-    });
+-    e.exports = f.getFbeventsModules('SignalsFBEvents.plugins.cookie');
+-    if (f.registerPlugin) {
+-      f.registerPlugin('fbevents.plugins.cookie', e.exports);
+-    }
+-    f.ensureModuleRegistered('fbevents.plugins.cookie', function() {
+-      return e.exports;
+-    });
+-  })();
+-})();
+ (function() {
+   var a = window;
+   var b = document;
+@@ -23729,8 +23484,6 @@ fbq.registerPlugin('<PIXEL_ID>', {
+     fbq.loadPlugin('inferredevents');
+     instance.optIn('<PIXEL_ID>', 'IWLParameters', true);
+     fbq.set('iwlExtractors', '<PIXEL_ID>', []);
+-    fbq.loadPlugin('cookie');
+-    instance.optIn('<PIXEL_ID>', 'FirstPartyCookies', true);
+     fbq.loadPlugin('inferredevents');
+     fbq.loadPlugin('microdata');
+     fbq.loadPlugin('identity');

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "incremental": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "target": "es2020",
+    "lib": ["es2020", "es2020.promise", "DOM"],
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "dist/cjs",
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "allowJs": true
+  },
+  "include": ["src/**/*"]
+}
