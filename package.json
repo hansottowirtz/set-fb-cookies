@@ -1,12 +1,16 @@
 {
   "name": "set-fb-cookies",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Set _fbc and _fbp when Facebook Pixel doesn't",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "unpkg": "dist/umd/bundle.js",
   "author": "Hans Otto Wirtz <hansottowirtz@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hansottowirtz/set-fb-cookies.git"
+  },
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "tsc && tsc -p tsconfig.esm.json && rollup -c"
